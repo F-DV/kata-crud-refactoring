@@ -12,19 +12,32 @@ public class TodoModel {
 
         return todo.getGroupListId();
     }
+    public void setGroupListId(String groupList){
+        todo.setGroupListId(groupList);
+    }
 
     public Long getId() {
         return todo.getId();
     }
 
+    public void setId(Long id){
+        todo.setId(id);
+    }
 
     public String getName() {
         return todo.getName();
     }
 
+    public void setName(String name){
+        todo.setName(name);
+    }
 
     public boolean isCompleted() {
         return todo.isCompleted();
+    }
+
+    public void setIsCompleted(boolean completed){
+        todo.setCompleted(completed);
     }
 
 }
