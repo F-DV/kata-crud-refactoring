@@ -25,7 +25,7 @@ public class ProjectController {
 
     @PutMapping(value = "api/project")
     public Project update(@RequestBody Project project){
-        if(Project.getId() != null){
+        if(project.getId() != null){
             return projectService.save(project);
         }
         throw new RuntimeException("No existe el id para actualizar");
@@ -41,4 +41,4 @@ public class ProjectController {
         return projectService.get(id);
     }
 }
-}
+
