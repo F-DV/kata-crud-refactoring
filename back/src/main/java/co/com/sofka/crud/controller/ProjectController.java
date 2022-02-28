@@ -12,18 +12,18 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    @GetMapping(value = "api/tasklist")
+    @GetMapping(value = "api/project")
     public Iterable<Project> list(){
         return projectService.list();
     }
 
-    @PostMapping(value = "api/task")
+    @PostMapping(value = "api/project")
     public Project save(@RequestBody Project project){
         return projectService.save(project);
     }
 
 
-    @PutMapping(value = "api/task")
+    @PutMapping(value = "api/project")
     public Project update(@RequestBody Project project){
         if(Project.getId() != null){
             return projectService.save(project);
@@ -31,12 +31,12 @@ public class ProjectController {
         throw new RuntimeException("No existe el id para actualizar");
     }
 
-    @DeleteMapping(value = "api/{id}/task")
+    @DeleteMapping(value = "api/{id}/project")
     public void delete(@PathVariable("id") Long id){
         projectService.delete(id);
     }
 
-    @GetMapping(value = "api/{id}/task")
+    @GetMapping(value = "api/{id}/project")
     public Project get(@PathVariable("id") Long id){
         return projectService.get(id);
     }
